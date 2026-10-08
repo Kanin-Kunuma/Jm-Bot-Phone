@@ -1,0 +1,6 @@
+ncatbot==4.4.1.post1
+jmcomic
+img2pdf==0.4.4
+requests
+aiohttp
+Pillow

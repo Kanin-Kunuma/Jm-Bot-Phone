@@ -1,0 +1,20 @@
+xvfb-run 是容器里的命令，刚才贴在 Termux（~ $）里了。
+开两个会话，一条一条贴，每条回车。
+
+========== 会话1 ==========
+termux-wake-lock
+
+proot-distro login napcat
+
+进容器后提示变成 root@localhost:~# 再贴：
+xvfb-run -a /root/Napcat/opt/QQ/qq --no-sandbox -q 2250386460
+
+这一窗口不要关。又出二维码就扫一下。
+等到 WebSocket 已启动 / 人机玛巴。
+
+========== 会话2（提示必须是 ~ $，不要 login napcat）==========
+cd ~/JM-Bot
+termux-wake-lock
+python main.py
+
+连上后 QQ 发 /jm。
