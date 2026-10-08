@@ -219,29 +219,7 @@ A: NapCat 通常不需要单独配置签名服务器，它会处理好协议签�
    - PDF 2天自动过期
    - 手动清理 stock 目录：`rm -rf ~/JM-Bot/stock/*`
 
-## 目录结构
 
-```
-~/JM-Bot/
-├── main.py              # 机器人主程序 (手机版)
-├── requirements.txt     # Python 依赖
-├── pdf/                 # PDF 缓存 (2天过期)
-├── stock/               # 图片临时目录
-└── plugins/
-    ├── JmComicPlugin/   # 禁漫插件 (手机版优化)
-    │   ├── main.py      # 2天过期 + 3 workers + 序列化上传
-    │   ├── option.yml
-    │   └── __init__.py
-    └── Lolicon/         # 二次元图片插件
-```
-
-## 相关链接
-
-- NapCat 官方文档：https://napneko.github.io/
-- NapCat GitHub：https://github.com/NapNeko/NapCatQQ
-- NapCat Installer：https://github.com/NapNeko/NapCat-Installer
-- Termux F-Droid：https://f-droid.org/packages/com.termux/
-- ncatbot 文档：https://github.com/z719893361/ncatbot
 
 ## 更新日志
 
