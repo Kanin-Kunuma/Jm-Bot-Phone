@@ -109,52 +109,6 @@ xvfb-run -a /root/Napcat/opt/QQ/qq --no-sandbox -q <你的QQ号>
 
 ---
 
-## ncatbot 补丁
-
-由于 NapCat 返回的握手响应格式与 ncatbot 不完全兼容，需要手动修补 ncatbot。
-
-### 补丁内容
-
-在 Termux 主目录（非 proot 容器内）执行：
-
-```bash
-cd ~/JM-Bot
-nano .venv/lib/python3.11/site-packages/ncatbot/client/launch.py
-```
-
-找到 `validate_napcat_response` 函数，修改为：
-
-```python
-def validate_napcat_response(response: Dict[str, Any], uri: str) -> None:
-    if "status" in response:
-        status_value = response["status"]
-        # 兼容 dict 格式的 status
-        if isinstance(status_value, dict):
-            if status_value.get("ok") is True or status_value.get("success") is True:
-                return
-        elif status_value == "ok":
-            return
-    
-    # 兼容 NapCat 的 post_type 字段
-    if response.get("post_type"):
-        return
-    
-    raise ValueError(f"NapCat handshake failed at {uri}: {response}")
-```
-
-找到 `get_uri_with_token` 函数，修改为：
-
-```python
-def get_uri_with_token(uri: str, token: str) -> str:
-    # 空 token 不追加参数
-    if not token or not token.strip():
-        return uri
-    separator = "&" if "?" in uri else "?"
-    return f"{uri}{separator}access_token={token}"
-```
-
----
-
 ## JM-Bot 配置
 
 ### 1. 克隆项目
