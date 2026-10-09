@@ -51,7 +51,6 @@ proot-distro rename debian napcat
 ---
 
 ## NapCat 安装与配置
-
 ### 1. 进入 proot 容器
 
 ```bash
@@ -110,7 +109,6 @@ xvfb-run -a /root/Napcat/opt/QQ/qq --no-sandbox -q <你的QQ号>
 ---
 
 ## JM-Bot 配置
-
 ### 1. 克隆项目
 
 ```bash
