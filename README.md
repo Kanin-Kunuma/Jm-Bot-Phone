@@ -51,6 +51,7 @@ proot-distro rename debian napcat
 ---
 
 ## NapCat 安装与配置
+
 ### 1. 进入 proot 容器
 
 ```bash
@@ -106,47 +107,6 @@ xvfb-run -a /root/Napcat/opt/QQ/qq --no-sandbox -q <你的QQ号>
 
 首次启动会打开 WebUI，访问 `http://127.0.0.1:6099/webui?token=<webui_token>` 完成 QQ 登录。
 
----
-
-## JM-Bot 配置
-### 1. 克隆项目
-
-```bash
-cd ~
-git clone https://github.com/你的用户名/JM-Bot.git
-cd JM-Bot
-```
-
-### 2. 安装 Python 依赖
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. 配置 config.yaml
-
-编辑 `config.yaml`：
-
-```yaml
-root: '你的管理员QQ号'
-bt_uin: '机器人QQ号'
-enable_webui_interaction: false
-debug: false
-websocket_timeout: 15
-
-napcat:
-  ws_uri: ws://localhost:3001
-  ws_token: 'jmbot3001'  # 与 NapCat 配置一致
-  ws_listen_ip: localhost
-  webui_uri: http://localhost:6099
-  webui_token: 你的webui_token
-  enable_webui: true
-  check_napcat_update: false
-  stop_napcat: false
-  remote_mode: true  # 手机端必须为 true
-  report_self_message: false
-  report_forward_message_detail: true
-```
 
 ---
 
